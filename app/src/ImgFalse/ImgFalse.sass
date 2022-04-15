@@ -1,0 +1,47 @@
+.question-wrapper
+    background: #9ba0ad
+    color: #161616
+    margin-top: 20px
+    height: max-content
+    display: flex
+    width: 90%
+    flex-direction: column
+    justify-content: space-between
+    padding: 5px
+    .question-title
+        display: flex
+        align-items: center
+        width: 100%
+        min-height: 20%
+        word-wrap: break-word //zawijanie tekstu
+        height: auto
+        font-size: 1.5rem
+        font-weight: 600
+    .question-answers-wrapper
+        margin-top: 20px
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        padding: 10px
+        div:nth-child(1)
+            margin-top: 0
+        .question-answer-content
+            background: #898ea0
+            margin-top: 5px
+            border: 2px solid black
+            width: 90%
+            min-height: 20%
+            height: auto
+            display: flex
+            align-items: center
+            transition: .3s
+            word-break: break-word
+            span
+                padding: 10px
+                font-weight: 400
+                font-size: 1.2rem
+                width: 100%
+                transition: .3s
+            &:hover
+                cursor: pointer
+                background: #616572

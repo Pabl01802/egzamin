@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Redirects from './Redirects'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Redirects />
   </React.StrictMode>,
   document.getElementById('root')
 );

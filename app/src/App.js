@@ -1,6 +1,7 @@
 import './App.sass'
 import questions from './questions.js'
-import ImgFalse from './ImgFalse'
+import ImgFalse from './ImgFalse/ImgFalse'
+import ImgTrue from './ImgTrue/ImgTrue'
 import React, { useCallback , useState, useEffect } from 'react'
 import { randomArr } from './random'
 
@@ -17,11 +18,11 @@ const App = () => {
       if(content === questions[index].correct){
         setCorrectQ(prevState => prevState + 1)
         console.log('Prawidłowa odpowiedź')
-        e.target.style.backgroundColor = 'green'
+        e.target.style.backgroundColor = '#59ff2b'
       }else{
         console.log('Zła odpowiedź')
-        e.target.innerHTML+= ` &nbsp Prawidłowa odpowiedź: ${questions[index].correct}`
-        e.target.style.backgroundColor = 'red'
+        e.target.innerHTML+= ` &nbsp Prawidłowa odpowiedź: <strong>${questions[index].correct}</strong>`
+        e.target.style.backgroundColor = '#ff2b2b'
       }
       questions[index].chance--
       setTotalQ(prevState => prevState + 1)
@@ -36,7 +37,7 @@ const App = () => {
     {console.log(randomArr)}
     <div className="App">
       <div className='top-app-wrapper'>
-        Egzamin
+        B.25 i B.26
       </div>
       <div className='top-bar-wrapper'>
         <div className='top-bar-score'>
@@ -44,34 +45,18 @@ const App = () => {
         </div>
       </div>
       <div className='app-wrapper'>
-        {/* <ImgFalse questions={questions} checkAnswer={checkAnswer} randomArr={randomArr} /> */}
-        {/* {!questions.img ? <ImgFalse questions={questions} checkAnswer={checkAnswer} randomArr={randomArr} /> : null} */}
         {questions.map(p=>{
-          if(!p.img){
+          if(questions[randomArr[p.id]].img===false){
             number = p.id
-            return(
-              <>
-                <ImgFalse number={number} questions={questions} checkAnswer={checkAnswer} randomArr={randomArr} correctAnswer={correctQ} totalQ={totalQ} percentage={percentage} />
-                <br />
-              </>
-            )
-          }else{
-            return(<h1>fdwaftg</h1>)
+            return(<ImgFalse number={number} questions={questions} checkAnswer={checkAnswer} randomArr={randomArr} correctAnswer={correctQ} totalQ={totalQ} percentage={percentage} />)
+          }else if(questions[randomArr[p.id]].img===true){
+            number = p.id
+            return(<ImgTrue number={number} questions={questions} checkAnswer={checkAnswer} randomArr={randomArr} correctAnswer={correctQ} totalQ={totalQ} percentage={percentage} />)
           }
         })}
       </div>
     </div>
     </>)
-  //     questions.map(p=>{
-  //       if(!p.img){
-  //           console.log(number)
-  //           number++
-  //           return(<ImgFalse number={number} questions={questions} checkAnswer={checkAnswer} randomArr={randomArr} correctQ={correctQ} totalQ={totalQ} percentage={percentage} />);
-  //       }else{
-  //           return(<h1>fsda</h1>)
-  //       }
-  //     })
-  // );
 }
 
 export default App;
