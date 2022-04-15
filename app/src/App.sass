@@ -30,6 +30,9 @@ body
         display: flex
         flex-wrap: wrap
         justify-content: center
+        align-items: center 
+        background: purple
+        padding-bottom: 20px
         .question-wraper
             background: rgb(201, 201, 201)
             margin-top: 20px
@@ -58,6 +61,7 @@ body
                 flex-direction: column
                 justify-content: space-around
                 align-items: center
+                padding: 10px
                 div:nth-child(1)
                     margin-top: 0
                 .question-answer-content
@@ -73,6 +77,9 @@ body
                     align-items: center
                     transition: .3s
                     word-break: break-word
+                    span
+                        width: 100%
+                        transition: .3s
                     &:hover
                         cursor: pointer
                         background: rgb(248, 244, 23)
