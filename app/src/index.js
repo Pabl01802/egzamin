@@ -6,7 +6,7 @@ import Redirects from './Redirects'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Redirects />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
