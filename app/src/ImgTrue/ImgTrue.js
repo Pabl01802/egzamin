@@ -8,8 +8,8 @@ const ImgTrue = (props) => {
       <>
         <div className='question-wrapper'>
           <div className='img-question-title'>
-            {console.log(props.number)}
-            {console.log(props.questions[props.randomArr[props.number]].b)}
+            {/* {console.log(props.number)}
+            {console.log(props.questions[props.randomArr[props.number]].b)} */}
             <span>{props.number+1}. {props.questions[props.randomArr[props.number]].title}</span>
             <img src={props.questions[props.randomArr[props.number]].src} />
           </div>
