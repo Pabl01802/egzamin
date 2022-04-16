@@ -2,7 +2,7 @@ import questions from "./questions";
 
 export let randomArr = []
 
-let i = 11
+let i = 40
 
 while(i>0){
   let random = Math.floor(Math.random()*questions.length)

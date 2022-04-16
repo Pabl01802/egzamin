@@ -35,6 +35,8 @@ const App = () => {
   return (
     <>
     {console.log(randomArr)}
+    {console.log(questions)}
+    {console.log(questions[0].b)}
     <div className="App">
       <div className='top-app-wrapper'>
         B.25 i B.26
